@@ -26,7 +26,7 @@ const server = http.createServer(async (req, res) => {
 
     if (path.startsWith('/product/')) {
         const page = parseInt(path.split('/')[2]);
-        const filePath = './product.json';
+        const filePath = 'data/product.json';
 
         try {
             const productData = await readProductData(filePath);
@@ -41,35 +41,7 @@ const server = http.createServer(async (req, res) => {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Produit ${product.id}</title>
-            <style>
-              body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                background-color: #f4f4f9;
-              }
-              .card {
-                background: #ffffff;
-                border-radius: 10px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-                padding: 20px;
-                max-width: 300px;
-                text-align: center;
-              }
-              .card h2 {
-                font-size: 1.5em;
-                margin: 0 0 10px;
-              }
-              .card p {
-                font-size: 1em;
-                margin: 5px 0;
-                color: #555;
-              }
-            </style>
+            <link rel="stylesheet" href="cards.css">
           </head>
           <body>
             ${generateCard(product)}
