@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box
+}
+
+.card{
+    height: 200px;
+    width: 100px;
+    background-color: lightgrey;
+    border: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
